@@ -1,0 +1,366 @@
+list[,3]
+list[,4]
+?reshape
+?melt
+library(reshape)
+library(reshape2)
+?melt
+melt(list)
+class(list)
+dim(list)
+length(list)
+N <- dim(list)[1]
+N
+N <- dim(list)[1]*dim(list)[1]
+N
+list
+head(list)
+?read.csv
+list <- read.csv('/Users/jamescrall/Dropbox/Work/Research/ThermalTrackingWSarah/Data/transcriptomeList.csv', header = FALSE)
+list
+library(assertr)
+col_concat(list)
+c(list)
+list <- read.csv('/Users/jamescrall/Dropbox/Work/Research/ThermalTrackingWSarah/Data/transcriptomeList.csv', header = FALSE)
+list
+list <- list[,1]
+list
+substr(list,1,1)
+substr(list,1,1) == "c"
+list <- list[substr(list,1,1) == "c" | substr(list,1,1) == "C",]
+substr(list,1,1) == "c"
+substr(list,1,1) == "c" | substr(list,1,1) == "C"
+keep <- substr(list,1,1) == "c" | substr(list,1,1) == "C"
+kee[]
+keep
+list <- list[keep,]
+keep <- find(substr(list,1,1) == "c" | substr(list,1,1) == "C")
+keep <- which(substr(list,1,1) == "c" | substr(list,1,1) == "C")
+kee[]
+keep
+list <- list[keep,]
+dim(keep)
+kee[p]
+keep
+length(keep)
+list <- list[keep]
+list
+colony <- substr(list,2,2)
+colony
+as.numeric(colony)
+colony <- as.numeric(substr(list,2,2))
+id <- substr(list,4,7)
+id
+id <- as.numeric(substr(list,4,7))
+id == "quee"
+keep <- which((substr(list,1,1) == "c" | substr(list,1,1) == "C") & substr(list,4,4)!="q")
+keep
+list <- list[keep]
+list
+colony <- as.numeric(substr(list,2,2))#
+id <- as.numeric(substr(list,4,7))
+colony
+id
+colony
+id
+genData <- as.data.frame(colony,id)
+?as.data.frame
+genData <- as.data.frame(cbindcolony,id))
+genData <- as.data.frame(cbind(colony,id))
+genData
+trackingData <- read.csv('/Users/jamescrall/Dropbox/Work/Research/ThermalTrackingWSarah/Data/trackingSummary.csv', header = FALSE)
+head(trackingData)
+trackingData <- read.csv('/Users/jamescrall/Dropbox/Work/Research/ThermalTrackingWSarah/Data/trackingSummary.csv')
+trackingData
+genData$id
+merge(genData, trackingData, by.x = "id", by.y = "id")
+list
+substr(list,2,2)
+trackingData
+genData
+head(genData)
+head(trackingData)
+which(unique(genData$id))
+duplicated(genData$id)
+genData <- genData[!(duplicated(genData$id)),]
+genData
+unique(genData$id)
+merge(trackingData, genData, by.x = "id", by.y = "id")
+genData
+trackingData
+trackingData[trackingData$id == 2432,]
+trackingData <- read.csv('/Users/jamescrall/Dropbox/Work/Research/ThermalTrackingWSarah/Data/trackingSummary.csv')
+head(trackingData)
+trackingData
+unique(trackingData$id)
+merge(trackingData, genData, by.x = "id", by.y = "id")
+mDat$colony.x
+mDat <- merge(trackingData, genData, by.x = "id", by.y = "id")
+mDat$colony.x
+mDat$colony.x == mDat$colony.y
+?echo
+mean(mDat$framesTracked)
+mean(mDat$framesTracked)/2
+mean(mDat$framesTracked)/2/60
+mDat[,3]
+mDat[,1:3]
+size(mDat)
+dim(mDat)
+library(ggmap)
+data <- read.xls('/Users/jamescrall/Dropbox/Work/_Research/CO2_Pollen/Data/Metabolomics/SUB08103_Metabolomics.xlsx')
+install.packages('tidyverse')
+library)tidyverse)
+library(tidyverse)
+data <- read_excel('/Users/jamescrall/Dropbox/Work/_Research/CO2_Pollen/Data/Metabolomics/SUB08103_Metabolomics.xlsx')
+library)readxl
+library(readxl)
+data <- read_excel('/Users/jamescrall/Dropbox/Work/_Research/CO2_Pollen/Data/Metabolomics/SUB08103_Metabolomics.xlsx')
+head(data)
+data[1:100,1]
+class(data)
+data$data.frame
+data
+data[1:3,]
+data[50:100,,]
+data[50:100,]
+data[50:100,2]
+data[1:100,2]
+data[1:1000,2]
+print(data[1:1000,2])
+print(data[1:1000,2], n = 100)
+print(data[1:1000,2], n = 500)
+data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/CO2_Pollen/2020-2021_GreenhouseExpts/target.csv')
+head(data)
+data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/CO2_Pollen/2020-2021_GreenhouseExpts/target.csv')
+head(data)
+boxplot(Arginine~treatment, data=data)
+boxplot(log10(Arginine)~treatment, data=data)
+boxplot(log10(Arginine)~treatment*run, data=data)
+boxplot(log10(Arginine)~treatment*run*species, data=data)
+haed(data)
+head(data)
+boxplot(log10(Valine~treatment*run*species, data=data)
+boxplot(log10(Valine)~treatment*run*species, data=data)
+boxplot(log10(Valine)~treatment*run*species, data=data)
+boxplot(log10(Valine)~species*treatment, data=data)
+boxplot(log10(Valine)~treatment*species, data=data)
+library(lme4)
+library(lmerTest)
+arg.model <- lmer(log10(Arginine)~treatment*species + (1|run), data = data)
+summary(arg.model)
+arg.model <- lmer(log10(Arginine)~treatment*as.factor(species) + (1|run), data = data)
+summary(arg.model)
+arg.model <- lmer(log10(Arginine)~treatment*species + (1|run), data = data)
+summary(arg.model)
+arg.model <- lmer(log10(Valine)~treatment*species + (1|run), data = data)
+summary(arg.model)
+arg.model <- lmer(log10(Valine)~treatment+species + (1|run), data = data)
+summary(arg.model)
+arg.model <- lmer(log10(Valine)~treatment*species + (1|run), data = data)
+arg.model <- lmer(log10(Valine)~treatment*species + (1|run), data = data)
+arg.model <- lmer(log10(Valine)~treatment*as.factor(species) + (1|run), data = data)
+arg.model <- lmer(log10(Valine)~treatment*species + (1|run), data = data)
+class(data$species)
+head(data)
+head(data)
+am.acid.vars <- c('Arginine', 'Histidine', 'Lysine', 'Methionine', 'Phenylalanine', 'Threonine', 'Tryptophan', 'Valine')
+aa.data <- data[,c(am.acid.vars)]
+aa.data
+aa.data <- log10(aa.data)
+aa.data
+aa.data[aa.data == 0] <- NA
+aa.data <- data[,c(am.acid.vars)]
+aa.data[aa.data == 0] <- NA
+aa.data
+aa.data <- complete.cases(aa.data)
+library(lme4)#
+library(lmerTest)#
+#
+data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/CO2_Pollen/2020-2021_GreenhouseExpts/target.csv')#
+head(data)#
+#
+#Subset to amino acids#
+#Define columns with amino acids#
+am.acid.vars <- c('Arginine', 'Histidine', 'Lysine', 'Methionine', 'Phenylalanine', 'Threonine', 'Tryptophan', 'Valine')#
+#
+#Create a subset with just the amino acids#
+aa.data <- data[,c(am.acid.vars)]#
+#
+#Remove zeros#
+aa.data[aa.data == 0] <- NA#
+aa.data <- complete.cases(aa.data)#
+#
+#Log transform#
+aa.data <- log10(aa.data)
+aa.pc <- prcomp(aa.data, center= TRUE, scale = TRUE)
+aa.data
+aa.data <- data[,c(am.acid.vars)]
+aa.data[aa.data == 0] <- NA
+aa.data
+aa.data <- complete.cases(aa.data)
+aa.data
+aa.data <- aa.data[complete.cases(aa.data),]
+aa.data[aa.data == 0] <- NA
+aa.data <- aa.data[complete.cases(aa.data),]
+complete.cases(aa.data)
+aa.data <- data[,c(am.acid.vars)]
+aa.data[aa.data == 0] <- NA
+aa.data <- aa.data[complete.cases(aa.data),]
+aa.data
+aa.data <- aa.data[keep.ind,]
+aa.data[aa.data == 0] <- NA
+aa.data <- data[,c(am.acid.vars)]
+aa.data[aa.data == 0] <- NA
+keep.ind <- complete.cases(aa.data)
+aa.data <- aa.data[keep.ind,]
+keep.ind
+aa.data <- log10(aa.data)
+aa.data
+aa.pc <- prcomp(aa.data, center= TRUE, scale = TRUE)
+aa.pc
+summary(aa.pc)
+attributes(aa.pc)
+aa.oc$x
+aa.pc$x
+aa.data$PC1[keep.ind] <- aa.pc$x[,1]
+library(lme4)#
+library(lmerTest)#
+#
+data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/CO2_Pollen/2020-2021_GreenhouseExpts/target.csv')#
+head(data)#
+#
+#Subset to amino acids#
+#Define columns with amino acids#
+am.acid.vars <- c('Arginine', 'Histidine', 'Lysine', 'Methionine', 'Phenylalanine', 'Threonine', 'Tryptophan', 'Valine')#
+#
+#Create a subset with just the amino acids#
+aa.data <- data[,c(am.acid.vars)]#
+#
+#Remove zeros#
+aa.data[aa.data == 0] <- NA#
+keep.ind <- complete.cases(aa.data)#
+aa.data <- aa.data[keep.ind,]#
+#
+#Log transform#
+aa.data <- log10(aa.data)#
+#
+aa.pc <- prcomp(aa.data, center= TRUE, scale = TRUE)
+aa.data$PC1 <-
+aa.data$PC1 <- []
+aa.data$PC1 <- []
+aa.data$PC1 <- NA
+aa.data
+keep.ind
+find(keep.ind)
+aa.data$PC1[keep.ind] <- aa.pc$x[,1]
+aa.pc$x[,1]
+aa.data$PC1 <- aa.pc$x[,1]
+aa.data
+data
+library(lme4)#
+library(lmerTest)#
+#
+data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/CO2_Pollen/2020-2021_GreenhouseExpts/target.csv')#
+head(data)#
+#
+#Subset to amino acids#
+#Define columns with amino acids#
+am.acid.vars <- c('Arginine', 'Histidine', 'Lysine', 'Methionine', 'Phenylalanine', 'Threonine', 'Tryptophan', 'Valine')#
+#
+#Create a subset with just the amino acids#
+aa.data <- data[,c(am.acid.vars)]#
+#
+#Remove zeros#
+aa.data[aa.data == 0] <- NA#
+keep.ind <- complete.cases(aa.data)#
+aa.data <- aa.data[keep.ind,]#
+#
+#Log transform#
+aa.data <- log10(aa.data)#
+#
+aa.pc <- prcomp(aa.data, center= TRUE, scale = TRUE)#
+#
+data$PC1 <- NA#
+data$PC2 <- NA#
+#
+data$PC1[keep.ind] <- aa.pc$x[,1]
+head(data)
+data
+data$PC2[keep.ind] <- aa.pc$x[,2]
+boxplot(PC1~treatment, data=data)
+boxplot(PC1~treatment*species, data=data)
+pc.model <- lmer(PC1~treatment*species + (1|run), data = data)
+summary(pc.model)
+arg.model <- lmer(log10(Valine)~treatment+species + (1|run), data = data)ca
+pc.model <- lmer(PC1~treatment+species + (1|run), data = data)
+summary(pc.model)
+pc.model <- lmer(PC2~treatment+species + (1|run), data = data)
+summary(pc.model)
+pc.model <- lmer(PC2~treatment*species + (1|run), data = data)
+summary(pc.model)
+pc.model <- lm(PC2~treatment*species, data = data)
+summary(pc.model)
+pc.model <- lm(PC2~treatment+species, data = data)
+summary(pc.model)
+pc.model <- lm(PC1~treatment+species, data = data)
+summary(pc.model)
+pc.model <- lm(PC1~treatment*species, data = data)
+summary(pc.model)
+setwd('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/AppletonTempTraces')
+filelist <- list.files(pattern = ".csv")#
+#
+par(mfcol = c(4,1))#
+for(i in 1:length(filelist)){#
+	tempdata <- read.csv(filelist[i], skip = 1)#
+	tempdata <-tempdata[,1:6]#
+	colnames(tempdata) <- c('Num', 'Time', 'air.temp', 'ground.temp', 'shallow.soil.temp', 'deep.soil.temp')#
+	lw <- 0.5#
+	plot(tempdata$air.temp, ylim = c(0,40), xlim = c(5000, 60000),cex = 0)#
+	lines(tempdata$air.temp, lwd = lw, col = "blue") #
+	lines(tempdata$ground.temp, lwd = lw, col = 'purple')#
+	lines(tempdata$shallow.soil.temp, lwd = lw, col = 'orange')#
+	lines(tempdata$deep.soil.temp, lwd = lw, col = "red")#
+	title(filelist[i])#
+	}
+pdf('singleColonyTemps.pdf')#
+plot(tempdata$air.temp, ylim = c(0,40), xlim = c(15000, 20000),cex = 0)#
+	lines(tempdata$air.temp, lwd = lw, col = "blue") #
+	lines(tempdata$ground.temp, lwd = lw, col = 'purple')#
+	lines(tempdata$shallow.soil.temp, lwd = lw, col = 'orange')#
+	#lines(tempdata$deep.soil.temp, lwd = lw, col = "red")#
+	#title(filelist[i])#
+	dev.off()
+i
+i = 1
+tempdata <- read.csv(filelist[i], skip = 1)#
+	tempdata <-tempdata[,1:6]#
+	colnames(tempdata) <- c('Num', 'Time', 'air.temp', 'ground.temp', 'shallow.soil.temp', 'deep.soil.temp')#
+	lw <- 0.5#
+	plot(tempdata$air.temp, ylim = c(0,40), xlim = c(5000, 60000),cex = 0)#
+	lines(tempdata$air.temp, lwd = lw, col = "blue") #
+	lines(tempdata$ground.temp, lwd = lw, col = 'purple')#
+	lines(tempdata$shallow.soil.temp, lwd = lw, col = 'orange')#
+	lines(tempdata$deep.soil.temp, lwd = lw, col = "red")#
+	title(filelist[i])
+##Single colony#
+pdf('singleColonyTemps.pdf')#
+plot(tempdata$air.temp, ylim = c(0,40), xlim = c(15000, 20000),cex = 0)#
+	lines(tempdata$air.temp, lwd = lw, col = "blue") #
+	lines(tempdata$ground.temp, lwd = lw, col = 'purple')#
+	lines(tempdata$shallow.soil.temp, lwd = lw, col = 'orange')#
+	#lines(tempdata$deep.soil.temp, lwd = lw, col = "red")#
+	#title(filelist[i])#
+	dev.off()
+par(mfcol = c(4,1))#
+for(i in 1:length(filelist)){#
+	tempdata <- read.csv(filelist[i], skip = 1)#
+	tempdata <-tempdata[,1:6]#
+	colnames(tempdata) <- c('Num', 'Time', 'air.temp', 'ground.temp', 'shallow.soil.temp', 'deep.soil.temp')#
+	lw <- 0.5#
+	plot(tempdata$air.temp, ylim = c(0,40), xlim = c(5000, 60000),cex = 0)#
+	lines(tempdata$air.temp, lwd = lw, col = "blue") #
+	lines(tempdata$ground.temp, lwd = lw, col = 'purple')#
+	lines(tempdata$shallow.soil.temp, lwd = lw, col = 'orange')#
+	lines(tempdata$deep.soil.temp, lwd = lw, col = "red")#
+	title(filelist[i])#
+	}
