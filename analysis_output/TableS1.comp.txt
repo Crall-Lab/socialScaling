@@ -1,0 +1,19 @@
+Data: response.data
+Models:
+pc1.active.response.model.s4: PC1 ~ log10(colony.size.at.tagging) + neonic + nestTemp + species + (1 | caste) + (1 | experimental.day) + (1 | block) + (1 | colony.id/uniqueID)
+pc1.active.response.model.s1: PC1 ~ log10(colony.size.at.tagging) * neonic + nestTemp + species + (1 | caste) + (1 | experimental.day) + (1 | block) + (1 | colony.id/uniqueID)
+pc1.active.response.model.s2: PC1 ~ log10(colony.size.at.tagging) * nestTemp + neonic + species + (1 | caste) + (1 | experimental.day) + (1 | block) + (1 | colony.id/uniqueID)
+pc1.active.response.model.s3: PC1 ~ log10(colony.size.at.tagging) * neonic + nestTemp + species + (1 | caste) + (1 | experimental.day) + (1 | block) + (1 | colony.id/uniqueID)
+pc1.active.response.model.s5: PC1 ~ log10(colony.size.at.tagging) + neonic * nestTemp + species + (1 | caste) + (1 | experimental.day) + (1 | block) + (1 | colony.id/uniqueID)
+pc1.active.response.model: PC1 ~ log10(colony.size.at.tagging) * nestTemp * neonic + species + (1 | caste) + (1 | experimental.day) + (1 | block) + (1 | colony.id/uniqueID)
+pc1.active.response.model.s6: PC1 ~ log10(colony.size.at.tagging) * neonic * nestTemp + nestTemp * species + (1 | caste) + (1 | experimental.day) + (1 | block) + (1 | colony.id/uniqueID)
+                             npar   AIC   BIC logLik deviance   Chisq Df Pr(>Chisq)    
+pc1.active.response.model.s4   12 22707 22794 -11342    22683                          
+pc1.active.response.model.s1   13 22709 22803 -11342    22683  0.0607  1  0.8054189    
+pc1.active.response.model.s2   13 22709 22802 -11341    22683  0.5913  0               
+pc1.active.response.model.s3   13 22709 22803 -11342    22683  0.0000  0               
+pc1.active.response.model.s5   13 22709 22803 -11342    22683  0.0282  0               
+pc1.active.response.model      16 22699 22814 -11333    22667 16.5836  3  0.0008607 ***
+pc1.active.response.model.s6   18 22700 22830 -11332    22664  2.1750  2  0.3370593    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

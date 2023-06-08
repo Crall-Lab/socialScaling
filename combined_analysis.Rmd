@@ -7,6 +7,7 @@ output:
 ---
 
 Accompanying code for "Colony size buffers interactions between neonicotinoid exposure and cold stress in bumble bees"
+
 ```{r setup, include=FALSE}
 library(formatR)
 knitr::opts_chunk$set(echo = TRUE, tidy.opts = list(width.cutoff = 60), tidy = TRUE)
@@ -36,22 +37,25 @@ set_theme(base = theme_classic(),
 pixel_conversion <- 196 #How many pixels per centimeter
 
 #Define output folder for figures
-output_folder = '/Users/jamescrall/Dropbox/Work/_Writing/2022_SocialScaling/Figures_v2'
-
+output_folder = '/Users/jamescrall/Documents/GitHub/socialScaling/analysis_output'
+base_dir = '/Users/jamescrall/Documents/GitHub/socialScaling'
 
 #Set standard colors
 ctrl_color <- rgb(130/255, 197/255, 100/255)
 imid_color <- rgb(140/255, 23/255, 45/255)
 
 ```
+
 #Queenright colony experiments
 
 ## Load and clean data for queenright experiments
+
 Load data
+
 ```{r load demography data}
 # Get colony demographic metadata
-setwd('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/colonyInfoAndDemography/')
-metadata <- read.csv("csvFiles/colonyMetaData.csv")
+setwd(base_dir) #Change to local repository folder
+metadata <- read.csv("colonyMetaData.csv")
 
 ### Parse into separate treatments ###
 #initialize
@@ -63,11 +67,11 @@ metadata$neonic <- as.numeric(metadata$neonic)
 metadata$cold <- as.numeric(metadata$cold)
 
 ### Load behavioral tracking data
-setwd('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/thermalRigTracking/')
 behData <- read.csv('behData_June2022.csv')
 behData <- behData[complete.cases(behData[,c('porTimeMoving', 'movingVelocity')]),] ## Remove rows with missing data
 #tracking.metadata <- read.csv('trackingMetadata.csv')
-tag.data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/colonyInfoAndDemography/csvFiles/combined_taglist.csv')
+#tag.data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/colonyInfoAndDemography/csvFiles/combined_taglist.csv')
+tag.data <- read.csv('combined_taglist.csv')
 
 #Correct name for one misentified colony
 tag.data$colony[tag.data$colony == 'BB246'] <- 'BG246'
@@ -100,7 +104,9 @@ reproductive.vs.size.model <- glm(reproductive~log10(colony.size.at.tagging), da
 summary(reproductive.vs.size.model)
 
 ## Load thermal data
-thermData <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/thermalRigTracking/summaryThermalDataM_Oct_2021.csv')
+#thermData <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/thermalRigTracking/summaryThermalDataM_Oct_2021.csv')
+thermData <- read.csv('summaryThermalDataM_Oct_2021.csv')
+
 thermData <- thermData[!is.na(thermData$block),] #Remove some missing data
 
 behData$colony.id <- paste(behData$block, behData$rigPosition, sep = "_")
@@ -188,6 +194,7 @@ wilcox.test(colony.size.at.tagging~beh.data, data = subset(metadata, colony.size
 ```
 
 Perform principal components analysis on within-nest behavioral metrics
+
 ```{r PC analysis}
 
 #Run principal components analysis on nest behavior
@@ -277,9 +284,11 @@ behData$colony.id <- as.factor(behData$colony.id)
 behData <- subset(behData, species %in% c('impatiens', 'bimaculatus', 'griseocolis') & framesTracked > 30)
 ```
 
-## Body temperature  validation
+## Body temperature validation
+
 ```{r body temp evaluation}
-body_temp_ref_data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/thermalRigTracking/body_temp_groun_truth.csv')
+#body_temp_ref_data <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/thermalRigTracking/body_temp_groun_truth.csv')
+body_temp_ref_data <- read.csv('body_temp_groun_truth.csv')
 
 temp_val_plots <- function(body_temp_ref_data){
   par(mfcol = c(2,2))
@@ -324,7 +333,6 @@ dev.off()
 
 ```
 
-
 ```{r, raw temperature responses visualization}
 tmp <- subset(behData, cold == TRUE & neonic==FALSE & colony.size.at.tagging > 4 & framesTracked > 20)
 tmp$distanceToCenterInstantaneous <- tmp$distanceToCenterInstantaneous/pixel_conversion
@@ -351,6 +359,7 @@ dev.off()
 ```
 
 ## Active response model - effects of treatment during active cooling
+
 ```{r pc1 response model}
 setwd(output_folder)
 
@@ -383,6 +392,7 @@ dev.off()
 ```
 
 ## Recovery model - effects of treatment on behavioral recovery after cold exposure
+
 ```{r pc1 recovery}
 setwd(output_folder)
 
@@ -408,8 +418,8 @@ plot_model(pc1.recovery.model, type="pred", terms=c('rampState_ch', 'neonic', 'c
 dev.off()
 ```
 
-#Worker group models
-Characterize treatment effects by initial behavioral groups (bees that are on vs. off the nest at beginning of trials)
+#Worker group models Characterize treatment effects by initial behavioral groups (bees that are on vs. off the nest at beginning of trials)
+
 ```{r response model by worker group}
 setwd(output_folder)
 
@@ -505,6 +515,7 @@ dev.off()
 ```
 
 ## Brood surface temperature analysis
+
 ```{r brood temps}
 
 setwd(output_folder)
@@ -552,17 +563,17 @@ write.csv(signif(summary(brood.temp.recovery.model)$coefficients, 3), file = 'br
 
 #Export panels
 setwd(output_folder)
-pdf("FigS9.pdf")
+pdf("FigS10.pdf")
 plot_model(brood.temp.model, type="pred", terms=c('nestAirTemp','neonic', 'colony.size.at.tagging [4, 80]'), colors = list(ctrl_color, imid_color), axis.title = c("Nest Temperature (C0", 'Spatial Centrality (PC1)'), show.legend = F, title = "Brood temperature during cold exposure")
 dev.off()
 
-pdf("FigS10.pdf")
+pdf("FigS11.pdf")
 plot_model(brood.temp.recovery.model, type="pred", terms=c('tempRampState','neonic', 'colony.size.at.tagging [4, 80]'), colors = list(ctrl_color, imid_color), axis.title = c("Observation Period", 'Spatial Centrality (PC1)'), show.legend = F, title = "Brood temperature during recovery")
 dev.off()
 ```
 
-
 ## Proximate behavioral mechanisms
+
 ```{r behavioral mechanisms model}
 setwd(output_folder)
 
@@ -603,7 +614,6 @@ dev.off()
 
 ```
 
-
 ```{r alternative allometry mechanisms}
 #Colony size vs. activity
 colony.sizes <- aggregate(behData$colony.size.at.tagging, list(behData$colony.id), FUN = mean)[,2]
@@ -617,7 +627,7 @@ interaction.rate <-  aggregate(behData$meanInteractionRate*behData$colony.size.a
 interaction.size.model <- gam(interaction.rate~s(colony.sizes))
 summary(interaction.size.model)
 setwd(output_folder)
-png("FigS8.png", width = 640, height = 300)
+png("FigS9.png", width = 640, height = 300)
 a <- plot_smooths(activity.size.model, colony.sizes) + xlab("Colony Size") + ylab("Mean activity \n(proportion of time moving)") 
 b <- plot_smooths(interaction.size.model, colony.sizes) + xlab("Colony Size") + ylab("Interaction Rate \n(physical contact/frame)")
 grid.arrange(a,b, nrow = 1)
@@ -625,16 +635,20 @@ dev.off()
 
 ```
 
-
 # Microcolony size-manipulation experiments
 
 ## Load and clean data
 
 ```{r load data}
-block_1 <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/Block_1_all_colonies_data.csv')
-block_2 <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/Block_2_all_colonies_data.csv')
-block_3 <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/Block_3_all_colonies_data.csv')
-metadata <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/metadata_summary.csv')
+# block_1 <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/Block_1_all_colonies_data.csv')
+# block_2 <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/Block_2_all_colonies_data.csv')
+# block_3 <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/Block_3_all_colonies_data.csv')
+# metadata <- read.csv('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/metadata_summary.csv')
+
+block_1 <- read.csv(file.path(base_dir, 'microcolony_data/Block_1_all_colonies_data.csv'))
+block_2 <- read.csv(file.path(base_dir, 'microcolony_data/Block_2_all_colonies_data.csv'))
+block_3 <- read.csv(file.path(base_dir, 'microcolony_data/Block_3_all_colonies_data.csv'))
+metadata <- read.csv(file.path(base_dir, 'microcolony_data/metadata_summary.csv'))
 mc_data <- rbind(block_1, block_2, block_3)
 head(mc_data)
 
@@ -667,7 +681,7 @@ mc_data$speed_when_moving <- log10(mc_data$speed_when_moving)
 mc_data$num_brood_interactions <- sqrt(mc_data$num_brood_interactions)
 
 #Get tag lists from experiments
-mc_taglist <- read.csv("/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/microcolony_expts/microcolony_taglist.csv")
+mc_taglist <- read.csv(file.path(base_dir, 'microcolony_data/microcolony_taglist.csv'))
 #Convert to factors
 attach(mc_taglist)
 valid.ids <- paste(tag.ID,block, colony, sep="_")
@@ -719,7 +733,6 @@ for(i in 1:length(cols)){
 #mc_data <- subset(mc_data, rampState %in% c('pre', 'ramp'))
 ```
 
-
 ## PCA analysis
 
 ```{r pca}
@@ -749,8 +762,8 @@ ggplot(data = mc.pc.loadings, aes(x=reorder(variable, +PC1), y=PC1,  fill=PC1)) 
 dev.off()
 ```
 
-##Models
-Statistical models 
+##Models Statistical models
+
 ```{r PC1 cold response}
 #Overall temperature response model in control colonies
 mc.pc1.response.model<- lmer(pc1~nest_temp + (1|block)+(1|colony)+(1|unique.id) , data = subset(mc_data, treatment == "control"), REML = FALSE)
@@ -783,7 +796,7 @@ pdf("Fig6_de.pdf")
 p1 <- plot_model(mc.pc1.full.model, type='pred', terms = c('nest_temp', 'treatment', 'colony_size'), ci.lvl = 0, colors = list(ctrl_color, imid_color), axis.title = c("Nest temperature (C)", 'Spatial Centrality (PC1)'), show.legend = F, title = "Microcolony responses")
 dev.off()
 
-pdf("FigS7.pdf")
+pdf("FigS8.pdf")
 plot_model(mc.pc1.response.model, type="eff",  title = "microcolony temperature reponse", axis.title= c("Nest temperature (C)", 'Spatial Centrality (PC1)'))
 #ggplot(subset(mc_data, frames_tracked>30), aes(x = nest_temp, y=pc1)) + geom_smooth()
 #plot_smooths(mc.pc1.gam.resp.model, nest_temp)
@@ -791,10 +804,12 @@ dev.off()
 ```
 
 # Colony demography
+
 ## Load and clean data
+
 ```{r load and clean data, echo = FALSE}
-setwd('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/colonyInfoAndDemography/')
-metadata <- read.csv("csvFiles/colonyMetaData.csv")
+setwd(base_dir)
+metadata <- read.csv("colonyMetaData.csv")
 
 ### Parse into separate treatments ###
 #initialize
@@ -810,8 +825,8 @@ metadata$cold <- as.factor(metadata$cold)
 #Add size at tagging to metadata
 for(i in 1:length(metadata[,1])){
   
-  file = list.files(path = "./csvFiles/colonyTaglists/", pattern = as.character(paste(metadata$colonyID[i], '.csv', sep = "")))
-  taglist <- read.csv(paste("./csvFiles/colonyTaglists/", file, sep = ""))
+  file = list.files(path = "./metadata/csvFiles/colonyTaglists/", pattern = as.character(paste(metadata$colonyID[i], '.csv', sep = "")))
+  taglist <- read.csv(paste("./metadata/csvFiles/colonyTaglists/", file, sep = ""))
   metadata$colony.size.at.tagging[i] <- dim(taglist)[1] #Figure out how many bees in this colony
 }
 #Add species element
@@ -840,6 +855,7 @@ demog.data <- demog.data[demog.data$colonyID != 'BI138',]
 ```
 
 ##Visualize growth data
+
 ```{r, visualize growth patterns}
 ##Growth models
 
@@ -875,7 +891,7 @@ dev.off()
 ```
 
 ```{r,log plotting function}
-custom_plot_log <- function(out, ylims, yticks){
+custom_plot_log <- function(out, ylims, yticks, ylabel){
   print(ylims)
   print(yticks)
   out$data$predicted <- log10(out$data$predicted)
@@ -886,9 +902,9 @@ custom_plot_log <- function(out, ylims, yticks){
   ctrl_ind <- c(1,3) #ctrl first, cold second
   neonic_ind <- c(2,4)  #ctrl first, cold second
   offset <- 0.05
-  plot(c(1,2)-offset, out$data$predicted[ctrl_ind], col = ctrl_color, pch = 19, xlim = c(0.7, 2.3), ylim = ylims, axes = FALSE, xlab = ('Temperature Treatment'), ylab = ("Final colony size"))
+  plot(c(1,2)-offset, out$data$predicted[ctrl_ind], col = ctrl_color, pch = 19, xlim = c(0.7, 2.3), ylim = ylims, axes = FALSE, xlab = ('Temperature Treatment'), ylab = ylabel)
   axis(1, labels = c("Control", "Cold"), at = c(1,2))
-  axis(2, at = log10(c(seq(1,10), seq(10,100, 10), seq(100,1000,100))), labels = FALSE)
+  axis(2, at = log10(c(seq(0.1, 1, 0.1),seq(1,10), seq(10,100, 10), seq(100,1000,100))), labels = FALSE)
   axis(2, at = yticks, labels = as.character(yticks), lwd = 0, las = 2)
   lines(c(1,2)-offset, out$data$predicted[ctrl_ind], col = ctrl_color, lty = 2)
   #Add CIs
@@ -904,11 +920,10 @@ custom_plot_log <- function(out, ylims, yticks){
 }
 ```
 
-
 ```{r models and graphs}
 setwd(output_folder)
 
-gen.model <- glmer(total~log10(colony.size.at.tagging)*cold*neonic+(1+log10(colony.size.at.tagging)|Species)+(1|experimentalBlock) + (1|beePiPosition), data = subset(demog.data, colony.size.at.tagging > 1 & alive.at.tagging == 1 & Species != 'perplexus'), family = "poisson")
+gen.model <- glmer(total~log10(colony.size.at.tagging)*cold*neonic+growth.length+(1+log10(colony.size.at.tagging)|Species)+(1|experimentalBlock) + (1|beePiPosition), data = subset(demog.data, colony.size.at.tagging > 1 & alive.at.tagging == 1 & Species != 'perplexus'), family = "poisson")
 summary(gen.model)
 #Best fitting model based on DHARMa examination of residuals, but currently removing 'growth length' as a factor
 
@@ -922,6 +937,12 @@ gen.model.s4 <- glmer(total~log10(colony.size.at.tagging)+neonic + cold+(1+log10
 gen.model.s5 <- glmer(total~log10(colony.size.at.tagging)+ cold+(1+log10(colony.size.at.tagging)|Species)+(1|experimentalBlock) + (1|beePiPosition), data = subset(demog.data, colony.size.at.tagging > 1 & alive.at.tagging == 1 & Species != 'perplexus'), family = "poisson")
 
 anova(gen.model, gen.model.s1, gen.model.s2, gen.model.s3, gen.model.s4, gen.model.s5)
+
+gen.model.alive <- glmer(total.alive~log10(colony.size.at.tagging)*cold*neonic+growth.length+(1+log10(colony.size.at.tagging)|Species)+(1|experimentalBlock) + (1|beePiPosition), data = subset(demog.data, colony.size.at.tagging > 1 & alive.at.tagging == 1 & Species != 'perplexus'), family = "poisson")
+
+gen.model.reproductives <- glmer(total.reproductives~log10(colony.size.at.tagging)*cold*neonic+growth.length+(1+log10(colony.size.at.tagging)|Species)+(1|experimentalBlock) + (1|beePiPosition), data = subset(demog.data, colony.size.at.tagging > 1 & alive.at.tagging == 1 & Species != 'perplexus'), family = "poisson")
+
+gen.model.incl.growth.length <- glmer(total~log10(colony.size.at.tagging)*cold*neonic+growth.length+(1+log10(colony.size.at.tagging)|Species)+(1|experimentalBlock) + (1|beePiPosition), data = subset(demog.data, colony.size.at.tagging > 1 & alive.at.tagging == 1 & Species != 'perplexus'), family = "poisson")
 
 capture.output(anova(gen.model, gen.model.s1, gen.model.s2, gen.model.s3, gen.model.s4, gen.model.s5), file = "TableS5.comp.txt")
 write.csv(as.data.frame(anova(gen.model, gen.model.s1, gen.model.s2, gen.model.s3, gen.model.s4, gen.model.s5)), file = "TableS5.comp.csv")
@@ -942,22 +963,57 @@ gen.model.exclude.singleton.colonies  <- glmer(total~log10(colony.size.at.taggin
 gen.model.exclude.large.and.single.colonies  <- glmer(total~log10(colony.size.at.tagging)*neonic*cold +growth.length+(1|experimentalBlock) +(1|Species), data = subset(demog.data, colony.size.at.tagging > 1 & colony.size.at.tagging < 40 & alive.at.tagging == 1 & Species != 'perplexus'), family = "poisson")
 #NB beePiPosition removed as a random effect in this model to improve convergence, removal does not qualitatively affect results
 
+
+demog.data$rel.growth <- (demog.data$total - demog.data$colony.size.at.tagging)/demog.data$colony.size.at.tagging
 #Figure 2: growth
 pdf("Fig5.pdf", width = 8, height = 4)
 par(mfcol = c(1,2))
 out <- plot_model(gen.model.exclude.large.colonies, type="pred", terms=c('cold', 'neonic','colony.size.at.tagging [4]'), transform="exp")
 #custom_plot(out, c(0,30), c(0,10,20,30))
-custom_plot_log(out, log10(c(1,40)), log10(c(1,10)))
+custom_plot_log(out, log10(c(1,40)), log10(c(1,10)), ylabel = "Final colony size")
 
 
 out <- plot_model(gen.model.exclude.large.colonies, type="pred", terms=c('cold', 'neonic','colony.size.at.tagging [40]'), transform="exp")
 #custom_plot(out, c(0,150), c(0,50,100,150))
-custom_plot_log(out, log10(c(1,150)), log10(c(1,10,100)))
+custom_plot_log(out, log10(c(1,150)), log10(c(1,10,100)), ylabel = "Final colony size")
 
 dev.off()
 
-```
+##Make below Fig S7
+pdf("FigS7.pdf")
+par(mfcol = (c(3,2)))
+out <- plot_model(gen.model, type="pred", terms=c('cold', 'neonic','colony.size.at.tagging [4]'), transform="exp", )
+#custom_plot(out, c(0,30), c(0,10,20,30))
+custom_plot_log(out, log10(c(1,40)), log10(c(1,10)), ylabel = "Final colony size (log10)")
 
+
+out <- plot_model(gen.model.reproductives, type="pred", terms=c('cold', 'neonic','colony.size.at.tagging [4]'), transform="exp")
+#custom_plot(out, c(0,30), c(0,10,20,30))
+custom_plot_log(out, log10(c(0.1,40)), log10(c(1,10)), ylabel = "Total reproductives (log10)")
+
+
+
+out <- plot_model(gen.model.alive, type="pred", terms=c('cold', 'neonic','colony.size.at.tagging [4]'), transform="exp")
+#custom_plot(out, c(0,30), c(0,10,20,30))
+custom_plot_log(out, log10(c(0.1,40)), log10(c(1,10)), ylabel = "Final number alive (log10)")
+
+
+out <- plot_model(gen.model, type="pred", terms=c('cold', 'neonic','colony.size.at.tagging [40]'), transform="exp")
+#custom_plot(out, c(0,150), c(0,50,100,150))
+custom_plot_log(out, log10(c(1,150)), log10(c(1,10,100)), ylabel = "Final number alive (log10)")
+
+
+out <- plot_model(gen.model.reproductives, type="pred", terms=c('cold', 'neonic','colony.size.at.tagging [40]'), transform="exp")
+#custom_plot(out, c(0,150), c(0,50,100,150))
+custom_plot_log(out, log10(c(.1,150)), log10(c(1,10,100)), ylabel = "Total reproductives (log10)")
+
+
+out <- plot_model(gen.model.alive, type="pred", terms=c('cold', 'neonic','colony.size.at.tagging [40]'), transform="exp")
+#custom_plot(out, c(0,150), c(0,50,100,150))
+custom_plot_log(out, log10(c(.1,150)), log10(c(1,10,100)), ylabel = "Final number alive (log10)")
+
+dev.off()
+```
 
 ```{r ramp rate microcolony, echo = FALSE}
 sd <- subset(mc_data, unique_colony == "1_1")
@@ -991,7 +1047,7 @@ colnames(ch.tmps) <- c('timestamp', 'nest_temp')
 mean(ch.tmps$nest_temp)
 median(ch.tmps$nest_temp)
 
-setwd('/Users/jamescrall/Dropbox/Work/_Research/Bees/Bumblebees/socialScalingOfStressors/Data/AppletonTempTraces')
+setwd(file.path(base_dir, 'AppletonTempTraces'))
 filelist <- list.files(pattern = ".csv")
 
 par(mfcol = c(4,1))
@@ -1032,7 +1088,7 @@ diff.data$Temperature <- abs(diff.data$Temperature)
 #hist(diff.data$Temperature)
 
 setwd(output_folder)
-pdf('FigS11.pdf')
+pdf('FigS12.pdf')
 par(mfcol = c(2,1))
 p1 <- ggplot(temp.data, aes(x = location, y = Temperature, fill = location)) + geom_violin() +geom_boxplot(width = 0.1, outlier.shape = NA) + ylim(0,40) + geom_hline(yintercept=14.3)+ scale_fill_discrete(labels = c("Air", "Surface", "2 cm belowground", "10 cm belowground"), name = "Temp probe location") + theme(legend.position = "none")
 

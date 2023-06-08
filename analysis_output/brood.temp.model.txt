@@ -1,0 +1,21 @@
+Data: dat
+Models:
+brood.temp.model.s7: meanTempBrood_all ~ nestAirTemp + species + (1 | colony.id) + (1 | experimental.day)
+brood.temp.model.s6: meanTempBrood_all ~ nestAirTemp + log10(colony.size.at.tagging) + species + (1 | colony.id) + (1 | experimental.day)
+brood.temp.model.s4: meanTempBrood_all ~ nestAirTemp + neonic + log10(colony.size.at.tagging) + species + (1 | colony.id) + (1 | experimental.day)
+brood.temp.model.s5: meanTempBrood_all ~ nestAirTemp * log10(colony.size.at.tagging) + species + (1 | colony.id) + (1 | experimental.day)
+brood.temp.model.s1: meanTempBrood_all ~ nestAirTemp * neonic + log10(colony.size.at.tagging) + species + (1 | colony.id) + (1 | experimental.day)
+brood.temp.model.s2: meanTempBrood_all ~ nestAirTemp + neonic * log10(colony.size.at.tagging) + species + (1 | colony.id) + (1 | experimental.day)
+brood.temp.model.s3: meanTempBrood_all ~ nestAirTemp * log10(colony.size.at.tagging) + neonic + species + (1 | colony.id) + (1 | experimental.day)
+brood.temp.model: meanTempBrood_all ~ nestAirTemp * neonic * log10(colony.size.at.tagging) + species + (1 | colony.id) + (1 | experimental.day)
+                    npar    AIC    BIC  logLik deviance   Chisq Df Pr(>Chisq)    
+brood.temp.model.s7    7 1882.0 1912.8 -934.02   1868.0                          
+brood.temp.model.s6    8 1882.4 1917.5 -933.19   1866.4  1.6722  1  0.1959630    
+brood.temp.model.s4    9 1882.7 1922.2 -932.33   1864.7  1.7225  1  0.1893720    
+brood.temp.model.s5    9 1866.4 1905.9 -924.21   1848.4 16.2322  0               
+brood.temp.model.s1   10 1879.1 1923.0 -929.57   1859.1  0.0000  1  1.0000000    
+brood.temp.model.s2   10 1879.5 1923.4 -929.73   1859.5  0.0000  0               
+brood.temp.model.s3   10 1866.8 1910.7 -923.40   1846.8 12.6626  0               
+brood.temp.model      13 1853.7 1910.8 -913.85   1827.7 19.1093  3  0.0002595 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

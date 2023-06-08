@@ -1,0 +1,15 @@
+Data: subset(mc_data, rampState %in% c("pre", "ramp"))
+Models:
+mc.pc1.full.model.s4: pc1 ~ nest_temp + treatment + colony_size + (1 | block) + (1 | colony/unique.id) + (1 | source_colony) + (1 | rampState)
+mc.pc1.full.model.s1: pc1 ~ nest_temp * treatment + colony_size + (1 | block) + (1 | colony/unique.id) + (1 | source_colony) + (1 | rampState)
+mc.pc1.full.model.s2: pc1 ~ nest_temp + treatment * colony_size + (1 | block) + (1 | colony/unique.id) + (1 | source_colony) + (1 | rampState)
+mc.pc1.full.model.s3: pc1 ~ nest_temp * colony_size + treatment + (1 | block) + (1 | colony/unique.id) + (1 | source_colony) + (1 | rampState)
+mc.pc1.full.model: pc1 ~ nest_temp * treatment * colony_size + (1 | block) + (1 | colony/unique.id) + (1 | source_colony) + (1 | rampState)
+                     npar   AIC   BIC logLik deviance   Chisq Df Pr(>Chisq)    
+mc.pc1.full.model.s4   10 75525 75611 -37753    75505                          
+mc.pc1.full.model.s1   11 75527 75621 -37752    75505  0.5088  1     0.4757    
+mc.pc1.full.model.s2   11 75520 75615 -37749    75498  6.1940  0               
+mc.pc1.full.model.s3   11 75522 75617 -37750    75500  0.0000  0               
+mc.pc1.full.model      14 75505 75625 -37738    75477 23.3999  3  3.333e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

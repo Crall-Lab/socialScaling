@@ -1,0 +1,17 @@
+Data: subset(demog.data, colony.size.at.tagging > 1 & alive.at.tagging ==  ...
+Models:
+gen.model.s5: total ~ log10(colony.size.at.tagging) + cold + (1 + log10(colony.size.at.tagging) | Species) + (1 | experimentalBlock) + (1 | beePiPosition)
+gen.model.s4: total ~ log10(colony.size.at.tagging) + neonic + cold + (1 + log10(colony.size.at.tagging) | Species) + (1 | experimentalBlock) + (1 | beePiPosition)
+gen.model.s1: total ~ log10(colony.size.at.tagging) * cold + neonic + (1 + log10(colony.size.at.tagging) | Species) + (1 | experimentalBlock) + (1 | beePiPosition)
+gen.model.s2: total ~ log10(colony.size.at.tagging) + cold * neonic + (1 + log10(colony.size.at.tagging) | Species) + (1 | experimentalBlock) + (1 | beePiPosition)
+gen.model.s3: total ~ log10(colony.size.at.tagging) * neonic + cold + (1 + log10(colony.size.at.tagging) | Species) + (1 | experimentalBlock) + (1 | beePiPosition)
+gen.model: total ~ log10(colony.size.at.tagging) * cold * neonic + growth.length + (1 + log10(colony.size.at.tagging) | Species) + (1 | experimentalBlock) + (1 | beePiPosition)
+             npar    AIC    BIC  logLik deviance   Chisq Df Pr(>Chisq)    
+gen.model.s5    8 557.20 573.26 -270.60   541.20                          
+gen.model.s4    9 548.62 566.69 -265.31   530.62 10.5805  1   0.001143 ** 
+gen.model.s1   10 545.46 565.53 -262.73   525.46  5.1653  1   0.023043 *  
+gen.model.s2   10 549.59 569.66 -264.79   529.59  0.0000  0               
+gen.model.s3   10 550.42 570.49 -265.21   530.42  0.0000  0               
+gen.model      14 500.66 528.77 -236.33   472.66 57.7537  4  8.596e-12 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

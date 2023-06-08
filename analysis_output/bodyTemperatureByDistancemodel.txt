@@ -1,0 +1,33 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: bodyTemp_localAv ~ neonic + distanceToCenterInstantaneous + log10(colony.size.at.tagging) +  
+    (1 | caste) + (1 | colony.id/uniqueID)
+   Data: dist.sub
+
+REML criterion at convergence: 10778.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.5674 -0.5938 -0.0675  0.5656  3.5679 
+
+Random effects:
+ Groups             Name        Variance Std.Dev.
+ uniqueID:colony.id (Intercept) 5.0217   2.2409  
+ colony.id          (Intercept) 4.7099   2.1702  
+ caste              (Intercept) 0.9936   0.9968  
+ Residual                       7.3868   2.7179  
+Number of obs: 2110, groups:  uniqueID:colony.id, 384; colony.id, 19; caste, 2
+
+Fixed effects:
+                                Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                     14.87093    2.11220   14.91870   7.040 4.12e-06 ***
+neonicTRUE                      -0.47293    1.07276   16.01706  -0.441  0.66521    
+distanceToCenterInstantaneous   -0.71476    0.04214 2023.06683 -16.961  < 2e-16 ***
+log10(colony.size.at.tagging)    5.15213    1.41984   15.95388   3.629  0.00227 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) nnTRUE dstTCI
+neonicTRUE  -0.264              
+dstncTCntrI -0.017 -0.041       
+lg10(cl...) -0.859 -0.002 -0.058

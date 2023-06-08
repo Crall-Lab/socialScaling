@@ -1,0 +1,56 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: PC1 ~ rampState_ch * neonic * log10(colony.size.at.tagging) +  
+    species + (1 | colony.id/uniqueID)
+   Data: sub.dat
+
+     AIC      BIC   logLik deviance df.resid 
+  5597.3   5671.1  -2785.7   5571.3     2142 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.0380 -0.5898  0.0606  0.6237  2.7303 
+
+Random effects:
+ Groups             Name        Variance Std.Dev.
+ uniqueID:colony.id (Intercept) 0.2525   0.5025  
+ colony.id          (Intercept) 0.2141   0.4627  
+ Residual                       0.6154   0.7845  
+Number of obs: 2155, groups:  uniqueID:colony.id, 463; colony.id, 20
+
+Fixed effects:
+                                                               Estimate Std. Error         df t value
+(Intercept)                                                    -0.07096    0.68540   21.60575  -0.104
+rampState_chb_after                                             0.83332    0.25749 1839.07135   3.236
+neonicTRUE                                                      1.21837    0.99914   21.73653   1.219
+log10(colony.size.at.tagging)                                  -0.29656    0.44557   20.81839  -0.666
+speciesgriseocolis                                              0.37347    0.38610   20.42546   0.967
+speciesimpatiens                                                0.98299    0.35949   17.82753   2.734
+rampState_chb_after:neonicTRUE                                 -1.72359    0.34723 1874.27949  -4.964
+rampState_chb_after:log10(colony.size.at.tagging)              -0.35709    0.16666 1860.71261  -2.143
+neonicTRUE:log10(colony.size.at.tagging)                       -1.18926    0.68536   19.80352  -1.735
+rampState_chb_after:neonicTRUE:log10(colony.size.at.tagging)    1.03359    0.21979 1904.18683   4.703
+                                                             Pr(>|t|)    
+(Intercept)                                                   0.91849    
+rampState_chb_after                                           0.00123 ** 
+neonicTRUE                                                    0.23575    
+log10(colony.size.at.tagging)                                 0.51300    
+speciesgriseocolis                                            0.34472    
+speciesimpatiens                                              0.01370 *  
+rampState_chb_after:neonicTRUE                               7.54e-07 ***
+rampState_chb_after:log10(colony.size.at.tagging)             0.03228 *  
+neonicTRUE:log10(colony.size.at.tagging)                      0.09824 .  
+rampState_chb_after:neonicTRUE:log10(colony.size.at.tagging) 2.75e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) rmpS__ nnTRUE l10(.. spcsgr spcsmp rmS__:TRUE rS__:1 nTRUE:
+rmpStt_chb_ -0.246                                                            
+neonicTRUE  -0.661  0.170                                                     
+lg10(cl...) -0.860  0.231  0.574                                              
+specsgrscls -0.297 -0.001 -0.199  0.035                                       
+specismptns -0.451  0.002  0.338  0.011  0.510                                
+rmpS__:TRUE  0.175 -0.742 -0.244 -0.170  0.022  0.011                         
+rS__:10(...  0.235 -0.974 -0.162 -0.234  0.001  0.000  0.722                  
+nTRUE:10(..  0.660 -0.152 -0.967 -0.640  0.169 -0.300  0.214      0.152       
+rS__:TRUE:1 -0.172  0.738  0.233  0.176 -0.020 -0.011 -0.973     -0.758 -0.217

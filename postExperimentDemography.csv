@@ -1,0 +1,61 @@
+notes,Death,Date processed,Colony ID,FQ Alive at end of experiment? (y/n),"# Queens Alive (marked FQ if the founding queen is included in the count. If no FQ, then the founding queen was not part of count. If no FQ anywhere, founding queen died and was removed before final processing.)",# Workers Alive,# Males Alive,# Unidentified Alive,Total # Alive,Founding Queen Dead,# Queens Dead,# Workers Dead,# Males Dead,# Unidentified Dead,Total # Dead,# Total
+Frozen 9/13,Frozen,9/13/2019,BI09,Y,1,66,35,,102,N,,8,,,8,110
+Frozen 9/13,Frozen,9/13/2019,BI10,Y,1,27,46,,74,N,,13,3,39,55,129
+Processed 9/9,CO2,9/9/2019,BG15,N,16,16,5,,37,N,,10,11,11,32,69
+Frozen 9/13,Frozen,9/13/2019,BI16,Y,1,9,3,,13,N,,,,,0,13
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BB19,N,2,,,,2,N,,,,,0,2
+Frozen 9/13,Frozen,9/13/2019,BI24,Y,5,27,32,,64,N,,9,,3,12,76
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BI31,N,,,,,0,Y,1,7,,,8,8
+Frozen 9/13,Frozen,9/13/2019,BI33,Y,1,42,30,,73,N,,6,,12,18,91
+Frozen 9/13,Frozen,9/13/2019,BB36,N,,5,2,,7,Y,1,,,,1,8
+Processed 9/11,CO2,9/11/2019,BB37,N,1,1,,,2,Y,1,15,,,16,18
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BB38,N,,,,,0,Y,1,3,,,4,4
+"Frozen 9/13 - (double check that the alive numbers are correct, only males?)",Frozen,9/13/2019,BB39,N,,,13,,13,Y,10,12,,,22,35
+Processed 9/10,CO2,9/10/2019,BI40,Y,1,4,1,4,10,N,,7,,,7,17
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BI41,N,,,,,0,Y,1,20,,,21,21
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BB50,N,,,,,0,Y,1,2,,,3,3
+Processed 9/10,CO2,9/10/2019,BB53,N,11,4,45,,60,N,1,11,16,2,30,90
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BI55,N,,,,,0,Y,1,,,,1,1
+Frozen 9/13,Frozen,9/13/2019,BB59,N,3,4,3,,10,N,,,,,0,10
+Frozen 9/13,Frozen,9/13/2019,BB64,Y,1,5,,,6,N,,,,,0,6
+Processed 9/11,CO2,9/11/2019,BI66,Y,1,8,,,9,N,,74,,12,86,95
+Frozen 9/13 - (most likely a BG),Frozen,9/13/2019,BB67,N,3,8,,,11,Y,1,3,,,4,15
+Processed 9/10,CO2,9/10/2019,BI72,Y,1,43,,,44,N,,60,,,60,104
+Processed 9/10,CO2,9/10/2019,BI80,N,13,12,11,,36,Y,1,2,6,1,10,46
+Frozen 9/13,Frozen,9/13/2019,BI84,Y,1,82,3,,86,N,,15,,23,38,124
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BB86,N,,,,,0,Y,3,17,1,,21,21
+Processed 9/6,CO2,9/6/2019,BI89,Y,1,39,,,40,N,,97,,5,102,142
+Frozen 9/13,Frozen,9/13/2019,BI91,Y,1,130,,,131,N,,51,,,51,182
+Processed 9/9,CO2,9/9/2019,BI99,Y,1,1,,,2,N,,174,,,174,176
+Processed 9/11,CO2,9/11/2019,BB105,Y,2,1,,,3,N,,7,6,,13,16
+Processed 9/11,CO2,9/11/2019,BI106,Y,1,3,,,4,N,,136,,,136,140
+Processed 9/10,CO2,9/10/2019,BI109,N,1,1,1,,3,Y,3,4,10,,17,20
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BI111,N,,,,,0,Y,1,1,,,2,2
+Frozen 9/13,Frozen,9/13/2019,BI134,Y,1,28,6,,35,N,,33,,47,80,115
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BB137,N,,,,,0,Y,1,2,,,3,3
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BI138,N,,,,,0,Y,1,5,,,6,6
+Frozen 9/13,Frozen,9/13/2019,BI141,N,,50,53,,103,N,,40,3,26,69,172
+Frozen 9/13,Frozen,9/13/2019,BI147,N,,57,1,,58,Y,1,8,,39,48,106
+Frozen 9/13,Frozen,9/13/2019,BB155,Y,1,27,27,,55,N,,5,4,21,30,85
+Frozen 9/13,Frozen,9/13/2019,BI156,Y,1,16,,,17,N,,76,,,76,93
+Frozen 9/13,Frozen,9/13/2019,BG157,N,3,4,2,,9,Y,1,,,,1,10
+"Processed 9/5 (Dead before processed) - this was labeled as “BB167”, should actually be “BB67”?",Natural,9/5/2019,BB67,N,,,,,0,Y,1,1,,,2,2
+Frozen 9/13,Frozen,9/13/2019,BI170,Y,1,9,,,10,N,,,,,0,10
+Frozen 9/13,Frozen,9/13/2019,BI176,Y,1,75,26,,102,N,,,1,8,9,111
+Frozen 9/13,Frozen,9/13/2019,BI183,Y,1,76,37,,114,N,,31,,15,46,160
+Frozen 9/13,Frozen,9/13/2019,BI195,Y,1,10,7,,18,N,,3,,,3,21
+Frozen 9/13,Frozen,9/13/2019,BI196,Y,1,126,32,,159,N,,,,27,27,186
+Frozen 9/13,Frozen,9/13/2019,BG197,N,13,13,,,26,Y,1,4,,,5,31
+Frozen 9/13,Frozen,9/13/2019,BG201,N,11,9,10,,30,Y,1,1,,,2,32
+Frozen 9/13,Frozen,9/13/2019,BG202,N,15,13,3,,31,Y,1,1,,,2,33
+Frozen 9/13,Frozen,9/13/2019,BI205,Y,1,108,,,109,N,,53,,,53,162
+Frozen 9/13,Frozen,9/13/2019,BI208,Y,1,38,9,,48,N,,19,,15,34,82
+Frozen 9/13,Frozen,9/13/2019,BI211,N,,72,21,,93,Y,1,,,35,36,129
+Processed 9/11,CO2,9/11/2019,BI217,Y,1,56,,,57,N,,65,,,65,122
+Frozen 9/13,Frozen,9/13/2019,BB231,Y,5,11,17,,33,N,,4,2,6,12,45
+"Frozen 9/13 - was labeled as “BI234”, should be “BG234”",Frozen,9/13/2019,BG234,Y,1,6,12,,19,N,,,,,0,19
+Processed 9/5 (Dead before processed),Natural,9/5/2019,BI238,N,,,,,0,Y,1,2,,,3,3
+Frozen 9/13,Frozen,9/13/2019,BG239,N,10,8,14,,32,Y,2,1,,,3,35
+Frozen 9/13,Frozen,9/13/2019,BG244,N,9,16,44,,69,Y,1,,1,5,7,76
+Frozen 9/13,Frozen,9/13/2019,BG246,Y,14,7,31,,52,N,,1,2,,3,55
+Frozen 9/13,Frozen,9/13/2019,BB248,Y,3,5,23,,31,N,1,4,1,1,7,38

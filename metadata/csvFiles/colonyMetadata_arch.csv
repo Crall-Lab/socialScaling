@@ -1,0 +1,61 @@
+colonyID,Treatment,positionInThermalRig,dateTagged,experimentalBlock,alive.at.tagging
+BG197,Neonic + cold,1,8-Jul-19,8,1
+BG202,Neonic,2,8-Jul-19,8,1
+BI147,None,3,8-Jul-19,8,1
+BI176,Cold,4,8-Jul-19,8,1
+BI41,Neonic + cold,1,10-Jul-19,11,1
+BI141,Neonic,2,10-Jul-19,11,1
+BI183,None,3,10-Jul-19,11,1
+BI91,Cold,4,10-Jul-19,11,1
+BG246,Cold,1,15-Jul-19,4,1
+BI24,Neonic,2,15-Jul-19,4,1
+BB155,None,3,15-Jul-19,4,1
+BB50,Neonic + cold,4,15-Jul-19,4,1
+BI196,Neonic + cold,1,17-Jul-19,10,1
+BB231,Neonic,2,17-Jul-19,10,1
+BI16,None,3,17-Jul-19,10,1
+BI10,Cold,4,17-Jul-19,10,1
+BI56,Cold,1,22-Jul-19,3,1
+BI170,Neonic,2,22-Jul-19,3,1
+BB38,None,3,22-Jul-19,3,1
+BI238,Neonic + cold,4,22-Jul-19,3,1
+BB67,Neonic + cold,1,24-Jul-19,9,1
+BB39,Neonic,2,24-Jul-19,9,1
+BG244,None,3,24-Jul-19,9,1
+BI211,Cold,4,24-Jul-19,9,1
+BI31,Cold,1,29-Jul-19,6,0
+BG239,Neonic,2,29-Jul-19,6,1
+BB59,None,3,29-Jul-19,6,1
+BB248,Neonic + cold,4,29-Jul-19,6,1
+BB105,Neonic + cold,1,31-Jul-19,12,1
+BB86,Neonic,2,31-Jul-19,12,1
+BI205,None,3,31-Jul-19,12,1
+BI217,Cold,4,31-Jul-19,12,1
+BB37,Cold,1,5-Aug-19,13,1
+BI66,Neonic,2,5-Aug-19,13,1
+BI72,None,3,5-Aug-19,13,1
+BI106,Neonic + cold,4,5-Aug-19,13,1
+BB36,Neonic + cold,1,7-Aug-19,1,1
+BB137,Neonic,2,7-Aug-19,1,1
+BI55,None,3,7-Aug-19,1,1
+BI195,Cold,4,7-Aug-19,1,1
+BI84,Cold,1,12-Aug-19,7,1
+BG201,Neonic,2,12-Aug-19,7,1
+BI134,None,3,12-Aug-19,7,1
+BI156,Neonic + cold,4,12-Aug-19,7,1
+BB19,Neonic + cold,1,14-Aug-19,15,1
+BG15,Neonic,2,14-Aug-19,15,1
+BI89,None,3,14-Aug-19,15,1
+BI99,Cold,4,14-Aug-19,15,1
+BB64,Cold,1,8/19/19,5,1
+BI208,Neonic,2,8/19/19,5,1
+BI33,None,3,8/19/19,5,1
+BG157,Neonic + cold,4,8/19/19,5,1
+BI09,Neonic + cold,1,8/21/19,2,1
+BI111,Neonic,2,8/21/19,2,1
+BI138,None,3,8/21/19,2,1
+BG234,Cold,4,8/21/19,2,1
+BB53,Cold,1,8/26/19,14,1
+BI80,Neonic,2,8/26/19,14,1
+BI109,None,3,8/26/19,14,1
+BI40,Neonic + cold,4,8/26/19,14,1

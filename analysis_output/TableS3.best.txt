@@ -1,0 +1,68 @@
+Linear mixed model fit by maximum likelihood . t-tests use
+  Satterthwaite's method [lmerModLmerTest]
+Formula: 
+PC1 ~ nestTemp * neonic * incubator + species + (1 | colony.id/uniqueID)
+   Data: tmp.dat
+
+     AIC      BIC   logLik deviance df.resid 
+  2732.9   2798.5  -1353.4   2706.9     1138 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.3735 -0.4875 -0.0016  0.5917  3.5714 
+
+Random effects:
+ Groups             Name        Variance Std.Dev.
+ uniqueID:colony.id (Intercept) 0.26520  0.5150  
+ colony.id          (Intercept) 0.05578  0.2362  
+ Residual                       0.52808  0.7267  
+Number of obs: 1151, groups:  
+uniqueID:colony.id, 94; colony.id, 13
+
+Fixed effects:
+                                    Estimate Std. Error
+(Intercept)                        1.603e+00  3.360e-01
+nestTemp                          -2.463e-02  9.588e-03
+neonicTRUE                        -4.995e-02  3.381e-01
+incubatorninc                      8.506e-02  3.592e-01
+speciesgriseocolis                -3.158e-01  2.945e-01
+speciesimpatiens                   5.778e-02  2.738e-01
+nestTemp:neonicTRUE                5.123e-03  1.221e-02
+nestTemp:incubatorninc            -6.072e-02  1.567e-02
+neonicTRUE:incubatorninc          -1.781e+00  4.836e-01
+nestTemp:neonicTRUE:incubatorninc  4.859e-02  2.018e-02
+                                          df t value Pr(>|t|)    
+(Intercept)                        2.381e+01   4.772 7.56e-05 ***
+nestTemp                           1.073e+03  -2.568 0.010350 *  
+neonicTRUE                         4.092e+01  -0.148 0.883277    
+incubatorninc                      4.615e+02   0.237 0.812908    
+speciesgriseocolis                 1.010e+01  -1.072 0.308601    
+speciesimpatiens                   8.098e+00   0.211 0.838091    
+nestTemp:neonicTRUE                1.071e+03   0.420 0.674895    
+nestTemp:incubatorninc             1.094e+03  -3.875 0.000113 ***
+neonicTRUE:incubatorninc           4.227e+02  -3.682 0.000261 ***
+nestTemp:neonicTRUE:incubatorninc  1.108e+03   2.408 0.016211 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) nstTmp nnTRUE incbtr spcsgr spcsmp nsT:TRUE
+nestTemp    -0.510                                            
+neonicTRUE  -0.544  0.511                                     
+incubatrnnc -0.480  0.477  0.412                              
+specsgrscls -0.519 -0.005 -0.192  0.066                       
+specismptns -0.672 -0.006  0.060  0.113  0.662                
+nstTmp:TRUE  0.400 -0.785 -0.654 -0.375  0.007  0.004         
+nstTmp:ncbt  0.298 -0.612 -0.305 -0.801  0.007  0.019  0.480  
+nncTRUE:ncb  0.273 -0.355 -0.561 -0.732  0.109  0.022  0.456  
+nstTm:TRUE: -0.236  0.475  0.384  0.622  0.008 -0.009 -0.605  
+            nstTm: nTRUE:
+nestTemp                 
+neonicTRUE               
+incubatrnnc              
+specsgrscls              
+specismptns              
+nstTmp:TRUE              
+nstTmp:ncbt              
+nncTRUE:ncb  0.596       
+nstTm:TRUE: -0.777 -0.788

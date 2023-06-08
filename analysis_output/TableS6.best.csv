@@ -1,0 +1,9 @@
+"","Estimate","Std. Error","df","t value","Pr(>|t|)"
+"(Intercept)",1.1,0.486,4.12,2.26,0.0844
+"nest_temp",-0.0117,0.00187,5250,-6.27,3.81e-10
+"treatmentneonic",-0.702,0.15,233,-4.68,4.81e-06
+"colony_size16",-0.569,0.166,115,-3.43,0.000843
+"nest_temp:treatmentneonic",0.00543,0.00193,41100,2.81,0.00492
+"nest_temp:colony_size16",0.00238,0.00174,41100,1.37,0.171
+"treatmentneonic:colony_size16",0.707,0.207,140,3.42,0.000817
+"nest_temp:treatmentneonic:colony_size16",-0.00957,0.00238,41100,-4.02,5.94e-05

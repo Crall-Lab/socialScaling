@@ -1,0 +1,45 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: meanTempBrood_all ~ nestAirTemp * neonic * log10(colony.size.at.tagging) +  
+    species + (1 | colony.id) + (1 | experimental.day)
+   Data: dat
+
+     AIC      BIC   logLik deviance df.resid 
+  1853.7   1910.8   -913.8   1827.7      583 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.1137 -0.6020 -0.0538  0.5481  4.2937 
+
+Random effects:
+ Groups           Name        Variance Std.Dev.
+ colony.id        (Intercept) 1.2845   1.133   
+ experimental.day (Intercept) 0.1347   0.367   
+ Residual                     1.1136   1.055   
+Number of obs: 596, groups:  colony.id, 19; experimental.day, 3
+
+Fixed effects:
+                                                      Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)                                           -5.64799    1.77276  35.00486  -3.186 0.003030 ** 
+nestAirTemp                                            1.16796    0.05017 576.81890  23.282  < 2e-16 ***
+neonicTRUE                                             7.30623    2.59120  33.60523   2.820 0.008004 ** 
+log10(colony.size.at.tagging)                          6.35811    1.19849  39.77113   5.305 4.53e-06 ***
+speciesgriseocolis                                     1.13070    0.86862  19.41007   1.302 0.208251    
+speciesimpatiens                                       2.37426    0.83510  19.03276   2.843 0.010386 *  
+nestAirTemp:neonicTRUE                                -0.16501    0.07221 577.01264  -2.285 0.022660 *  
+nestAirTemp:log10(colony.size.at.tagging)             -0.19438    0.03779 576.50159  -5.144 3.69e-07 ***
+neonicTRUE:log10(colony.size.at.tagging)              -6.87673    1.88550  36.32332  -3.647 0.000825 ***
+nestAirTemp:neonicTRUE:log10(colony.size.at.tagging)   0.16892    0.05554 577.31594   3.042 0.002460 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) nstArT nnTRUE l10(.. spcsgr spcsmp nsAT:TRUE nAT:10 nTRUE:
+nestAirTemp -0.494                                                           
+neonicTRUE  -0.661  0.339                                                    
+lg10(cl...) -0.870  0.524  0.588                                             
+specsgrscls -0.271 -0.004 -0.148  0.030                                      
+specismptns -0.417 -0.001  0.319  0.027  0.519                               
+nstArT:TRUE  0.346 -0.692 -0.494 -0.364 -0.003 -0.002                        
+nAT:10(...)  0.470 -0.952 -0.321 -0.550  0.002  0.002  0.659                 
+nTRUE:10(..  0.638 -0.333 -0.964 -0.636  0.121 -0.269  0.502     0.348       
+nAT:TRUE:10 -0.323  0.644  0.474  0.373  0.005  0.001 -0.959    -0.678 -0.524

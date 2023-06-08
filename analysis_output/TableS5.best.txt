@@ -1,0 +1,58 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: poisson  ( log )
+Formula: total ~ log10(colony.size.at.tagging) * cold * neonic + growth.length +  
+    (1 + log10(colony.size.at.tagging) | Species) + (1 | experimentalBlock) +      (1 | beePiPosition)
+   Data: subset(demog.data, colony.size.at.tagging > 1 & alive.at.tagging ==  
+    1 & Species != "perplexus")
+
+     AIC      BIC   logLik deviance df.resid 
+   500.7    528.8   -236.3    472.7       41 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.5478 -0.8603  0.0441  0.7217  3.4727 
+
+Random effects:
+ Groups            Name                          Variance Std.Dev. Corr 
+ experimentalBlock (Intercept)                   0.08248  0.2872        
+ beePiPosition     (Intercept)                   0.02212  0.1487        
+ Species           (Intercept)                   0.57778  0.7601        
+                   log10(colony.size.at.tagging) 0.09691  0.3113   -0.72
+Number of obs: 55, groups:  experimentalBlock, 15; beePiPosition, 4; Species, 3
+
+Fixed effects:
+                                             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                                 -1.080062   0.614928  -1.756 0.079020 .  
+log10(colony.size.at.tagging)                2.276097   0.271301   8.390  < 2e-16 ***
+cold1                                        0.883395   0.194251   4.548 5.42e-06 ***
+neonic1                                      0.255717   0.199453   1.282 0.199810    
+growth.length                                0.039939   0.005678   7.034 2.01e-12 ***
+log10(colony.size.at.tagging):cold1         -0.560305   0.127753  -4.386 1.16e-05 ***
+log10(colony.size.at.tagging):neonic1       -0.185616   0.144285  -1.286 0.198285    
+cold1:neonic1                               -1.085678   0.293301  -3.702 0.000214 ***
+log10(colony.size.at.tagging):cold1:neonic1  0.655695   0.193017   3.397 0.000681 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+                         (Intr) lg10(...) cold1  neonc1 grwth. lg10(clny.sz.t.tggng):c1
+lg10(cl...)              -0.759                                                        
+cold1                    -0.271  0.275                                                 
+neonic1                  -0.247  0.307     0.491                                       
+grwth.lngth              -0.547  0.267     0.169  0.100                                
+lg10(clny.sz.t.tggng):c1  0.244 -0.244    -0.965 -0.444 -0.161                         
+lg10(clny.sz.t.tggng):n1  0.204 -0.309    -0.373 -0.936 -0.045  0.338                  
+cold1:nenc1               0.099 -0.114    -0.567 -0.599 -0.047  0.528                  
+l10(...):1:              -0.082  0.112     0.522  0.604  0.026 -0.513                  
+                         lg10(clny.sz.t.tggng):n1 cld1:1
+lg10(cl...)                                             
+cold1                                                   
+neonic1                                                 
+grwth.lngth                                             
+lg10(clny.sz.t.tggng):c1                                
+lg10(clny.sz.t.tggng):n1                                
+cold1:nenc1               0.542                         
+l10(...):1:              -0.616                   -0.961
+optimizer (Nelder_Mead) convergence code: 0 (OK)
+Model failed to converge with max|grad| = 0.00410204 (tol = 0.002, component 1)
+

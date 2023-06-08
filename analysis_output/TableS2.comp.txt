@@ -1,0 +1,17 @@
+Data: sub.dat
+Models:
+pc1.recovery.model.s4: PC1 ~ neonic + log10(colony.size.at.tagging) + rampState_ch + species + (1 | colony.id/uniqueID)
+pc1.recovery.model.s1: PC1 ~ rampState_ch + neonic * log10(colony.size.at.tagging) + species + (1 | colony.id/uniqueID)
+pc1.recovery.model.s2: PC1 ~ rampState_ch * neonic + log10(colony.size.at.tagging) + species + (1 | colony.id/uniqueID)
+pc1.recovery.model.s3: PC1 ~ neonic * log10(colony.size.at.tagging) + rampState_ch + species + (1 | colony.id/uniqueID)
+pc1.recovery.model: PC1 ~ rampState_ch * neonic * log10(colony.size.at.tagging) + species + (1 | colony.id/uniqueID)
+pc1.recovery.model.tmp.sp.int: PC1 ~ rampState_ch * neonic * log10(colony.size.at.tagging) + rampState_ch * species + (1 | colony.id/uniqueID)
+                              npar    AIC    BIC  logLik deviance   Chisq Df Pr(>Chisq)    
+pc1.recovery.model.s4            9 5618.5 5669.6 -2800.2   5600.5                          
+pc1.recovery.model.s1           10 5620.1 5676.8 -2800.0   5600.1  0.4244  1     0.5148    
+pc1.recovery.model.s2           10 5618.4 5675.2 -2799.2   5598.4  1.6285  0               
+pc1.recovery.model.s3           10 5620.1 5676.8 -2800.0   5600.1  0.0000  0               
+pc1.recovery.model              13 5597.3 5671.1 -2785.7   5571.3 28.7366  3  2.544e-06 ***
+pc1.recovery.model.tmp.sp.int   15 5600.9 5686.1 -2785.5   5570.9  0.3764  2     0.8285    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

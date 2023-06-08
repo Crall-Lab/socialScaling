@@ -1,0 +1,11 @@
+"","Estimate","Std. Error","df","t value","Pr(>|t|)"
+"(Intercept)",-0.071,0.685,21.6,-0.104,0.918
+"rampState_chb_after",0.833,0.257,1840,3.24,0.00123
+"neonicTRUE",1.22,0.999,21.7,1.22,0.236
+"log10(colony.size.at.tagging)",-0.297,0.446,20.8,-0.666,0.513
+"speciesgriseocolis",0.373,0.386,20.4,0.967,0.345
+"speciesimpatiens",0.983,0.359,17.8,2.73,0.0137
+"rampState_chb_after:neonicTRUE",-1.72,0.347,1870,-4.96,7.54e-07
+"rampState_chb_after:log10(colony.size.at.tagging)",-0.357,0.167,1860,-2.14,0.0323
+"neonicTRUE:log10(colony.size.at.tagging)",-1.19,0.685,19.8,-1.74,0.0982
+"rampState_chb_after:neonicTRUE:log10(colony.size.at.tagging)",1.03,0.22,1900,4.7,2.75e-06

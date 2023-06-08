@@ -1,0 +1,61 @@
+colonyID,Treatment,positionInThermalRig,dateTagged,month,experimentalBlock,alive.at.tagging,numDeadBeesAtTagging,Species,beePiPosition
+BG197,Neonic + cold,1,8-Jul-2019,July,8,1,0,griseocolis,D
+BG202,Neonic,2,8-Jul-2019,July,8,1,0,griseocolis,A
+BI147,None,3,8-Jul-2019,July,8,1,0,impatiens,C
+BI176,Cold,4,8-Jul-2019,July,8,1,0,impatiens,B
+BI41,Neonic + cold,1,10-Jul-2019,July,11,1,0,bimaculatus,C
+BI141,Neonic,2,10-Jul-2019,July,11,1,0,impatiens,D
+BI183,None,3,10-Jul-2019,July,11,1,0,impatiens,B
+BI91,Cold,4,10-Jul-2019,July,11,1,0,impatiens,A
+BG246,Cold,1,15-Jul-2019,July,4,1,1,griseocolis,D
+BI24,Neonic,2,15-Jul-2019,July,4,1,0,impatiens,A
+BB155,None,3,15-Jul-2019,July,4,1,0,impatiens,C
+BB50,Neonic + cold,4,15-Jul-2019,July,4,1,0,bimaculatus,B
+BI196,Neonic + cold,1,17-Jul-2019,July,10,1,0,impatiens,A
+BB231,Neonic,2,17-Jul-2019,July,10,1,0,griseocolis,D
+BI16,None,3,17-Jul-2019,July,10,1,0,bimaculatus,B
+BI10,Cold,4,17-Jul-2019,July,10,1,0,impatiens,C
+BI56,Cold,1,22-Jul-2019,July,3,1,0,impatiens,B
+BI170,Neonic,2,22-Jul-2019,July,3,1,1,impatiens,C
+BB38,None,3,22-Jul-2019,July,3,1,0,bimaculatus,A
+BI238,Neonic + cold,4,22-Jul-2019,July,3,1,0,bimaculatus,D
+BB67,Neonic + cold,1,24-Jul-2019,July,9,1,1,griseocolis,B
+BB39,Neonic,2,24-Jul-2019,July,9,1,0,griseocolis,D
+BG244,None,3,24-Jul-2019,July,9,1,0,griseocolis,A
+BI211,Cold,4,24-Jul-2019,July,9,1,1,impatiens,C
+BI31,Cold,1,29-Jul-2019,July,6,0,8,bimaculatus,C
+BG239,Neonic,2,29-Jul-2019,July,6,1,0,griseocolis,B
+BB59,None,3,29-Jul-2019,July,6,1,3,griseocolis,A
+BB248,Neonic + cold,4,29-Jul-2019,July,6,1,3,griseocolis,D
+BB105,Neonic + cold,1,31-Jul-2019,July,12,1,7,bimaculatus,C
+BB86,Neonic,2,31-Jul-2019,July,12,1,6,bimaculatus,A
+BI205,None,3,31-Jul-2019,July,12,1,0,impatiens,D
+BI217,Cold,4,31-Jul-2019,July,12,1,0,impatiens,B
+BB37,Cold,1,5-Aug-2019,August,13,1,1,bimaculatus,A
+BI66,Neonic,2,5-Aug-2019,August,13,1,4,impatiens,D
+BI72,None,3,5-Aug-2019,August,13,1,5,impatiens,B
+BI106,Neonic + cold,4,5-Aug-2019,August,13,1,0,impatiens,C
+BB36,Neonic + cold,1,7-Aug-2019,August,1,1,0,bimaculatus,A
+BB137,Neonic,2,7-Aug-2019,August,1,1,2,bimaculatus,D
+BI55,None,3,7-Aug-2019,August,1,1,1,impatiens,C
+BI195,Cold,4,7-Aug-2019,August,1,1,0,impatiens,B
+BI84,Cold,1,12-Aug-2019,August,7,1,1,impatiens,C
+BG201,Neonic,2,12-Aug-2019,August,7,1,0,griseocolis,A
+BI134,None,3,12-Aug-2019,August,7,1,2,impatiens,B
+BI156,Neonic + cold,4,12-Aug-2019,August,7,1,4,impatiens,D
+BB19,Neonic + cold,1,14-Aug-2019,August,15,1,41,bimaculatus,D
+BG15,Neonic,2,14-Aug-2019,August,15,1,17,griseocolis,A
+BI89,None,3,14-Aug-2019,August,15,1,10,impatiens,B
+BI99,Cold,4,14-Aug-2019,August,15,1,20,impatiens,C
+BB64,Cold,1,19-Aug-2019,August,5,1,0,bimaculatus,A
+BI208,Neonic,2,19-Aug-2019,August,5,1,2,impatiens,D
+BI33,None,3,19-Aug-2019,August,5,1,0,impatiens,B
+BG157,Neonic + cold,4,19-Aug-2019,August,5,1,2,griseocolis,C
+BI09,Neonic + cold,1,21-Aug-2019,August,2,1,1,impatiens,C
+BI111,Neonic,2,21-Aug-2019,August,2,1,0,bimaculatus,D
+BI138,None,3,21-Aug-2019,August,2,1,3,bimaculatus,B
+BG234,Cold,4,21-Aug-2019,August,2,1,1,griseocolis,A
+BB53,Cold,1,26-Aug-2019,August,14,1,17,perplexus,D
+BI80,Neonic,2,26-Aug-2019,August,14,1,5,griseocolis,C
+BI109,None,3,26-Aug-2019,August,14,1,36,impatiens,A
+BI40,Neonic + cold,4,26-Aug-2019,August,14,1,53,impatiens,B

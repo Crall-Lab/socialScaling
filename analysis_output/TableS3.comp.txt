@@ -1,0 +1,27 @@
+Data: tmp.dat
+Models:
+pc1.response.model.by.incubator.s4: PC1 ~ nestTemp + neonic + incubator + species + (1 | colony.id/uniqueID)
+pc1.response.model.by.incubator.s1: PC1 ~ nestTemp * neonic + incubator + species + (1 | colony.id/uniqueID)
+pc1.response.model.by.incubator.s2: PC1 ~ nestTemp + neonic * incubator + species + (1 | colony.id/uniqueID)
+pc1.response.model.by.incubator.s3: PC1 ~ nestTemp * incubator + neonic + species + (1 | colony.id/uniqueID)
+pc1.response.model.by.incubator: PC1 ~ nestTemp * neonic * incubator + species + (1 | colony.id/uniqueID)
+                                   npar    AIC    BIC  logLik
+pc1.response.model.by.incubator.s4    9 2753.8 2799.3 -1367.9
+pc1.response.model.by.incubator.s1   10 2750.6 2801.0 -1365.3
+pc1.response.model.by.incubator.s2   10 2748.4 2798.9 -1364.2
+pc1.response.model.by.incubator.s3   10 2745.0 2795.5 -1362.5
+pc1.response.model.by.incubator      13 2732.9 2798.5 -1353.4
+                                   deviance   Chisq Df Pr(>Chisq)
+pc1.response.model.by.incubator.s4   2735.8                      
+pc1.response.model.by.incubator.s1   2730.6  5.2848  1   0.021512
+pc1.response.model.by.incubator.s2   2728.4  2.1010  0           
+pc1.response.model.by.incubator.s3   2725.0  3.4794  0           
+pc1.response.model.by.incubator      2706.9 18.1073  3   0.000418
+                                      
+pc1.response.model.by.incubator.s4    
+pc1.response.model.by.incubator.s1 *  
+pc1.response.model.by.incubator.s2    
+pc1.response.model.by.incubator.s3    
+pc1.response.model.by.incubator    ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

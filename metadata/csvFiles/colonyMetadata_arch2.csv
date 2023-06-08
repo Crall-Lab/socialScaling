@@ -1,0 +1,49 @@
+colonyID,Treatment,positionInThermalRig,dateTagged,experimentalBlock
+BG197,Neonic + cold,1,"July 8, 2019",8
+BG202,Neonic,2,"July 8, 2019",8
+BI147,None,3,"July 8, 2019",8
+BI176,Cold,4,"July 8, 2019",8
+BI41,Neonic + cold,1,"July 10, 2019",11
+BI141,Neonic ,2,"July 10, 2019",11
+BI183,None,3,"July 10, 2019",11
+BI91,Cold,4,"July 10, 2019",11
+BG246,Cold,1,"July 15, 2019",4
+BI24,Neonic,2,"July 15, 2019",4
+BB155,None,3,"July 15, 2019",4
+BB50,Neonic + cold,4,"July 15, 2019",4
+BI196,Neonic + cold,1,"July 17, 2019",10
+BB231,Neonic,2,"July 17, 2019",10
+BI16,None,3,"July 17, 2019",10
+BI10,Cold,4,"July 17, 2019",10
+BI56,Cold,1,"July 22, 2019",3
+BI170,Neonic,2,"July 22, 2019",3
+BB38,None,3,"July 22, 2019",3
+BI238,Neonic + cold,4,"July 22, 2019",3
+BB67,Neonic + cold,1,"July 24, 2019",9
+BB39,Neonic,2,"July 24, 2019",9
+BG244,None,3,"July 24, 2019",9
+BI211,Cold,4,"July 24, 2019",9
+BI31 (Dead Colony),Cold,1,"July 29, 2019",6
+BG239,Neonic,2,"July 29, 2019",6
+BB59,None,3,"July 29, 2019",6
+BB248,Neonic + cold,4,"July 29, 2019",6
+BB105,Neonic + cold,1,"July 31, 2019",12
+BB86,Neonic,2,"July 31, 2019",12
+BI205,None,3,"July 31, 2019",12
+BI217,Cold,4,"July 31, 2019",12
+BB37,Cold,1,"August 5, 2019",13
+BI66,Neonic,2,"August 5, 2019",13
+BI72,None,3,"August 5, 2019",13
+BI106,Neonic + cold,4,"August 5, 2019",13
+BB36,Neonic + cold,1,"August 7, 2019",1
+BB137,Neonic,2,"August 7, 2019",1
+BI55,None,3,"August 7, 2019",1
+BI195,Cold,4,"August 7, 2019",1
+BI84,Cold,1,"August 12, 2019",7
+BG201,Neonic,2,"August 12, 2019",7
+BI134,None,3,"August 12, 2019",7
+BI156,Neonic + cold,4,"August 12, 2019",7
+BB19,Neonic + cold,1,"August 14, 2019",15
+BG15,Neonic,2,"August 14, 2019",15
+BI89,None,3,"August 14, 2019",15
+BI99,Cold,4,"August 14, 2019",15

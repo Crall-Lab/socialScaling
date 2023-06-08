@@ -1,0 +1,15 @@
+Data: tmp.dat
+Models:
+pc1.recovery.model.by.incubator.s4: PC1 ~ rampState_ch + neonic + incubator + species + (1 | colony.id/uniqueID)
+pc1.recovery.model.by.incubator.s1: PC1 ~ rampState_ch * neonic + incubator + species + (1 | colony.id/uniqueID)
+pc1.recovery.model.by.incubator.s2: PC1 ~ rampState_ch + neonic * incubator + species + (1 | colony.id/uniqueID)
+pc1.recovery.model.by.incubator.s3: PC1 ~ rampState_ch * incubator + neonic + species + (1 | colony.id/uniqueID)
+pc1.recovery.model.by.incubator: PC1 ~ rampState_ch * neonic * incubator + species + (1 | colony.id/uniqueID)
+                                   npar    AIC    BIC  logLik deviance   Chisq Df Pr(>Chisq)   
+pc1.recovery.model.by.incubator.s4    9 1487.2 1526.3 -734.58   1469.2                         
+pc1.recovery.model.by.incubator.s1   10 1488.8 1532.2 -734.40   1468.8  0.3655  1   0.545466   
+pc1.recovery.model.by.incubator.s2   10 1481.0 1524.5 -730.52   1461.0  7.7539  0              
+pc1.recovery.model.by.incubator.s3   10 1482.1 1525.5 -731.04   1462.1  0.0000  0              
+pc1.recovery.model.by.incubator      13 1473.4 1529.8 -723.68   1447.4 14.7114  3   0.002081 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

@@ -1,0 +1,11 @@
+"","Estimate","Std. Error","df","t value","Pr(>|t|)"
+"(Intercept)",25.9,2.38,14.4,10.9,2.37e-08
+"tempRampState5",-0.116,0.686,191,-0.17,0.866
+"neonicTRUE",2.07,3.46,14.5,0.598,0.559
+"log10(colony.size.at.tagging)",1.01,1.57,14.9,0.644,0.529
+"speciesgriseocolis",0.0954,1.32,13.3,0.072,0.944
+"speciesimpatiens",0.625,1.28,13.4,0.487,0.634
+"tempRampState5:neonicTRUE",-3.41,0.948,191,-3.59,0.000415
+"tempRampState5:log10(colony.size.at.tagging)",-0.0747,0.529,192,-0.141,0.888
+"neonicTRUE:log10(colony.size.at.tagging)",-2.02,2.45,14.9,-0.825,0.422
+"tempRampState5:neonicTRUE:log10(colony.size.at.tagging)",2.4,0.73,191,3.28,0.00122

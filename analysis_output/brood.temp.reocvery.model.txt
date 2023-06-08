@@ -1,0 +1,15 @@
+Data: dat
+Models:
+brood.temp.recovery.model.s4: meanTempBrood_all ~ tempRampState + neonic + log10(colony.size.at.tagging) + species + (1 | colony.id)
+brood.temp.recovery.model.s1: meanTempBrood_all ~ tempRampState * neonic + log10(colony.size.at.tagging) + species + (1 | colony.id)
+brood.temp.recovery.model.s2: meanTempBrood_all ~ tempRampState + neonic * log10(colony.size.at.tagging) + species + (1 | colony.id)
+brood.temp.recovery.model.s3: meanTempBrood_all ~ tempRampState * log10(colony.size.at.tagging) + neonic + species + (1 | colony.id)
+brood.temp.recovery.model: meanTempBrood_all ~ tempRampState * neonic * log10(colony.size.at.tagging) + species + (1 | colony.id)
+                             npar    AIC    BIC  logLik deviance   Chisq Df Pr(>Chisq)   
+brood.temp.recovery.model.s4    8 637.49 664.42 -310.75   621.49                         
+brood.temp.recovery.model.s1    9 637.26 667.55 -309.63   619.26  2.2323  1   0.135149   
+brood.temp.recovery.model.s2    9 639.47 669.76 -310.73   621.47  0.0000  0              
+brood.temp.recovery.model.s3    9 629.74 660.03 -305.87   611.74  9.7294  0              
+brood.temp.recovery.model      12 622.73 663.12 -299.36   598.73 13.0102  3   0.004615 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
